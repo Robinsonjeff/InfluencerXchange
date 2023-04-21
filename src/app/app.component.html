@@ -8,16 +8,10 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <app-nav-bar></app-nav-bar>
-<div class="container">
-  <p>Active Influencers</p>
+<div><a routerLink="/influencers">Influencers</a>
+  <br>
+  <a routerLink="/advertisers">Advertisers</a></div>
 
-  <div class="personContainer" *ngFor="let person of influencers">
-    <p class="blurText">{{person.name}}</p> 
-    <p>Post Price: ${{person.postPrice}}</p>
-    <p>Target Audience: {{person.targetAudience}}</p>
-    <button class="button" (click)="goToSocialSite(person.socialMediaLink)">Show more</button>
-  </div>
-</div>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
