@@ -1,0 +1,22 @@
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    border-radius: 25px;
+    font-size: 18px;
+   
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #4c0d0d;
+}
+
+.container {
+    padding: 10px; display: flex; flex-flow: column; justify-content: center; align-items: center; gap:10px
+}
+.personContainer {
+    border: 2px solid white; border-radius: 10px; text-align: center; width: 40%;
+}

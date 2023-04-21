@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    font-family: 'Arimo', sans-serif;
+    font-family: 'Prompt', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+    color:white;
+}
+
+html {
+    background: #515151;
+}
+body{
+    margin: 0;
+}
+
+.blurText
+{
+    color: red;
+    text-shadow: 0 2px 2px rgba(255, 0, 0, 0.4),
+    0 4px 4px rgba(255, 0, 0, 0.3),
+    0 6px 6px rgba(255, 0, 0, 0.2),
+    0 8px 8px rgba(255, 0, 0, 0.1);
+}
