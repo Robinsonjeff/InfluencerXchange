@@ -1,0 +1,10 @@
+<div class="container">
+    <p>Active Influencers</p>
+  
+    <div class="personContainer" *ngFor="let person of influencers">
+      <p class="blurText">{{person.name}}</p> 
+      <p>Post Price: ${{person.postPrice}}</p>
+      <p>Target Audience: {{person.targetAudience}}</p>
+      <button class="button" (click)="goToSocialSite(person.socialMediaLink)">Show more</button>
+    </div>
+  </div>

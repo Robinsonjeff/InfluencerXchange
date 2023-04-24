@@ -1,0 +1,21 @@
+* {
+    margin:0;
+    padding: 0;;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    left: 0;
+    top:0;
+}
+
+.navText
+{
+    font-size: 26px;
+    color: red;
+    text-shadow: 0 2px 2px rgba(255, 0, 0, 0.4),
+    0 4px 4px rgba(255, 0, 0, 0.3),
+    0 6px 6px rgba(255, 0, 0, 0.2),
+    0 8px 8px rgba(255, 0, 0, 0.1);
+}
