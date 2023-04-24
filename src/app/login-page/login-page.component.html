@@ -1,0 +1,26 @@
+<div class="login-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form>
+          <mat-form-field appearance="fill">
+            <input matInput type="email" placeholder="Email" #emailInput required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <input matInput type="password" placeholder="Password" #passwordInput required>
+          </mat-form-field>
+          <div style="display: flex; flex-flow: row; justify-content: end; gap: 5px">
+            <div class="button-container">
+                <button mat-raised-button color="secondary" (click)="login(emailInput.value, passwordInput.value)">Login</button>
+            </div>
+            <div class="button-container">
+                <button mat-raised-button>Sign Up</button>
+            </div>
+           </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+</div>
+  

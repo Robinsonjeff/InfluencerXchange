@@ -1,14 +1,16 @@
 * {
     margin:0;
-    padding: 0;;
+    padding: 0;
 }
 
 .navbar {
     background-color: #333;
-    padding: 10px;
+    position: fixed;
     left: 0;
-    top:0;
+    top: 0;
+    width: 100%;
 }
+
 
 .navText
 {
@@ -19,3 +21,43 @@
     0 6px 6px rgba(255, 0, 0, 0.2),
     0 8px 8px rgba(255, 0, 0, 0.1);
 }
+
+
+.mat-nav-list a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .mat-nav-list a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .content-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  mat-sidenav-container {
+    height: 100%;
+  }
+  
+  
+  .sidenav-container {
+    margin-top: 64px; /* Adjust this value to match your navbar height */
+}
+
+  .mat-drawer-backdrop.mat-drawer-shown {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
