@@ -1,0 +1,12 @@
+:root {
+    --my-primary-color: #157632;
+    --my-secondary-color: #08b10a;
+  }
+  
+:root {
+    --my-primary-color: #157632;
+    --my-secondary-color: #08b10a;
+    --mat-primary: var(--my-primary-color);
+    --mat-accent: var(--my-secondary-color);
+  }
+  
