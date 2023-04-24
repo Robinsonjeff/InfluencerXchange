@@ -2,6 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+
+import { FooterComponent } from './footer/footer.component';
+import { AccountPageComponent } from './account-page/account-page.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    FooterComponent,
+    AccountPageComponent
+
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { InfluencersComponent } from './influencers/influencers.component';
 import { AdvertisersComponent } from './advertisers/advertisers.component';
@@ -15,6 +25,7 @@ const appRoutes: Routes = [
     NavBarComponent,
     InfluencersComponent,
     AdvertisersComponent
+
   ],
   imports: [
     BrowserModule,

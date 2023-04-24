@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    margin:0;
+    }
+
 * {
     font-family: 'Arimo', sans-serif;
     font-family: 'Prompt', sans-serif;
@@ -9,9 +14,7 @@
 html {
     background: #515151;
 }
-body{
-    margin: 0;
-}
+
 
 .blurText
 {
@@ -20,4 +23,5 @@ body{
     0 4px 4px rgba(255, 0, 0, 0.3),
     0 6px 6px rgba(255, 0, 0, 0.2),
     0 8px 8px rgba(255, 0, 0, 0.1);
+
 }
