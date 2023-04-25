@@ -1,3 +1,21 @@
 <div class="navbar">
-    <p class="navText">Joel Hilliard Cole Robinson</p>
+    <mat-toolbar style="display: flex; flex-flow: row; justify-content: space-between;">
+      <span class="navText">InfluencerXchange</span>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
 </div>
+<mat-sidenav-container class="sidenav-container" (backdropClick)="sidenav.toggle()" [hasBackdrop]="true">
+    <mat-sidenav #sidenav mode="over" position="end" style="min-width: 300px;">
+      <mat-nav-list disableRipple="">
+        <a mat-list-item routerLink="/login" (click)="sidenav.toggle()">Login</a>
+        <a mat-list-item routerLink="/signup" (click)="sidenav.toggle()">Sign up</a>
+        <a mat-list-item routerLink="/influencers" (click)="sidenav.toggle()">Influencers</a>
+        <a mat-list-item routerLink="/advertisers" (click)="sidenav.toggle()">Advertisers</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
