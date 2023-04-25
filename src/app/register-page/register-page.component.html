@@ -7,25 +7,43 @@
             <div>
                 <mat-form-field>
                     <label>First </label>
-                    <input matInput formControlName="firstName" required style="color: black;">   
+                    <input matInput #firstName  required style="color: black;">   
                 </mat-form-field>
                 <mat-form-field>
                     <label> Last </label>
-                    <input matInput formControlName="lastName" required style="color: black;">  
+                    <input matInput #lastName  required style="color: black;">  
+                </mat-form-field>
+                <mat-form-field>
+                    <label>User Name </label>
+                    <input matInput #userName  required style="color: black;">   
+                </mat-form-field>
+                <mat-form-field>
+                    <label> Password </label>
+                    <input matInput #password  required style="color: black;">  
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field>
                     <label>Phone Number</label>
-                    <input matInput formControlName="phone" required style="color: black;">
+                    <input matInput #phoneNumber  required style="color: black;">
                 </mat-form-field>
                 <mat-form-field>
-                <label>Age</label>
-                <input matInput formControlName="age" type="number" required style="color:black;">
+                    <label>Email </label>
+                    <input matInput #email  required style="color: black;">   
                 </mat-form-field>
+                <mat-form-field>
+                    <label>Age</label>
+                    <input matInput  #age type="number" required style="color:black;">
+                </mat-form-field>
+            
+                <mat-radio-group #accountType aria-label="Account Type">
+                    <mat-radio-button value="Influencer">Influencer</mat-radio-button>
+                    <mat-radio-button value="Advertiser">Advertiser</mat-radio-button>
+                </mat-radio-group>  
+              
             </div>  
             <div class="button-container">
-                <button mat-raised-button color="primary" type="submit">Register</button>
+                <button mat-raised-button color="primary" type="submit" (click)="formSubmit(firstName.value, lastName.value,userName.value,password.value, phoneNumber.value,email.value,age.value)">Register</button>
             </div>
             
         </form>
