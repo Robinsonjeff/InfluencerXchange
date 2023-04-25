@@ -3,7 +3,7 @@ mat-form-field{
     
 }
 mat-card{
-    background-color: bisque;
+    background-color: rgb(207, 207, 213);
 }
 input{
     background-color: white;
@@ -12,6 +12,7 @@ input{
 }
 
 label{
-    color: blue;
+    color: purple;
+    font-weight: bold;
     
 }
