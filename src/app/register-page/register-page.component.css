@@ -2,12 +2,10 @@ mat-form-field{
     padding:50px;
     
 }
-mat-card{
-    background-color: rgb(207, 207, 213);
-}
+
 input{
     background-color: white;
-
+    
 
 }
 
@@ -19,4 +17,31 @@ label{
 
 mat-spinner{
     height:36px;
+}
+
+mat-card{
+    width:75%;
+    
+}
+
+mat-card > div{
+    display:flex;
+    flex-flow:row;
+}
+
+mat-card > div > mat-form-field{
+    width:45%;
+
+}
+
+mat-radio-group{
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display:flex;
+    justify-content: center;
 }
