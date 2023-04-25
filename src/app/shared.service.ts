@@ -1,17 +1,32 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
-
+import { Subject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class SharedService {
-  private loginCredentialsSource = new Subject<{ email: string; password: string }>();
 
-  loginCredentials$ = this.loginCredentialsSource.asObservable();
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  emitLoginCredentials(credentials: { email: string; password: string }) {
-    this.loginCredentialsSource.next(credentials);
+  private baseUrl = 'http://localhost:3000';
+
+  register(userData: {
+    username: string;
+    password: string;
+    phoneNumber: string;
+    accountType: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    }): Observable<any> {
+      return this.http.post(`${this.baseUrl}/register`, userData);
+    }
+
+  login(credentials: { username: string; password: string }): Observable<any> {
+    return this.http.post(`${this.baseUrl}/login`, credentials);
   }
+
+ 
+
 }

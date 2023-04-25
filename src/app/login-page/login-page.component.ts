@@ -10,13 +10,11 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent {
   
-  @Output() onLogin = new EventEmitter<{email: string, password: string}>();
   
   
   constructor(private sharedService: SharedService, private router: Router) {}
   
   login(email: string, password: string) {
-    this.sharedService.emitLoginCredentials({ email, password });
   }
 
   goToSignUp(){
