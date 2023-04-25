@@ -7,7 +7,7 @@
     </mat-toolbar>
 </div>
 <mat-sidenav-container class="sidenav-container" (backdropClick)="sidenav.toggle()" [hasBackdrop]="true">
-    <mat-sidenav #sidenav mode="over" position="end">
+    <mat-sidenav #sidenav mode="over" position="end" style="min-width: 300px;">
       <mat-nav-list disableRipple="">
         <a mat-list-item routerLink="/login" (click)="sidenav.toggle()">Login</a>
         <a mat-list-item routerLink="/signup" (click)="sidenav.toggle()">Sign up</a>

@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     padding: 16px;
-  }
+}
   
   mat-card {
     width: 100%;
@@ -22,4 +22,8 @@
   mat-card-header{
     font-size: larger;
     margin-bottom: 20px;
+  }
+  button {
+    font-size: medium;
+    font:bolder;
   }

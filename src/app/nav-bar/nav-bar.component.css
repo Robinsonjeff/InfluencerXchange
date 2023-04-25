@@ -15,11 +15,11 @@
 .navText
 {
     font-size: 26px;
-    color: red;
-    text-shadow: 0 2px 2px rgba(255, 0, 0, 0.4),
-    0 4px 4px rgba(255, 0, 0, 0.3),
-    0 6px 6px rgba(255, 0, 0, 0.2),
-    0 8px 8px rgba(255, 0, 0, 0.1);
+    color: blue;
+    text-shadow: 0 1px 1px rgba(0, 0, 255, 0.4),
+                 0 2px 2px rgba(0, 0, 255, 0.3),
+                 0 3px 3px rgba(0, 0, 255, 0.2),
+                 0 4px 4px rgba(0, 0, 255, 0.1);
 }
 
 
@@ -51,6 +51,10 @@ html, body {
   mat-sidenav-container {
     height: 100%;
   }
+  mat-sidenav-content {
+    height: 100%;
+  }
+
   
   
   .sidenav-container {
@@ -59,5 +63,8 @@ html, body {
 
   .mat-drawer-backdrop.mat-drawer-shown {
     background-color: rgba(0, 0, 0, 0.6);
+  }
+  mat-side-name{
+    min-width: 300px;
   }
   
