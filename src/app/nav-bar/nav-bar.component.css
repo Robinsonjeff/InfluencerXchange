@@ -1,21 +1,70 @@
 * {
     margin:0;
-    padding: 0;;
+    padding: 0;
 }
 
 .navbar {
     background-color: #333;
-    padding: 10px;
+    position: fixed;
     left: 0;
-    top:0;
+    top: 0;
+    width: 100%;
 }
+
 
 .navText
 {
     font-size: 26px;
-    color: red;
-    text-shadow: 0 2px 2px rgba(255, 0, 0, 0.4),
-    0 4px 4px rgba(255, 0, 0, 0.3),
-    0 6px 6px rgba(255, 0, 0, 0.2),
-    0 8px 8px rgba(255, 0, 0, 0.1);
+    color: blue;
+    text-shadow: 0 1px 1px rgba(0, 0, 255, 0.4),
+                 0 2px 2px rgba(0, 0, 255, 0.3),
+                 0 3px 3px rgba(0, 0, 255, 0.2),
+                 0 4px 4px rgba(0, 0, 255, 0.1);
 }
+
+
+.mat-nav-list a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .mat-nav-list a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .content-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  mat-sidenav-container {
+    height: 100%;
+  }
+  mat-sidenav-content {
+    height: 100%;
+  }
+
+  
+  
+  .sidenav-container {
+    margin-top: 64px; /* Adjust this value to match your navbar height */
+}
+
+  .mat-drawer-backdrop.mat-drawer-shown {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  mat-side-name{
+    min-width: 300px;
+  }
+  

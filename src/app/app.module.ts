@@ -8,19 +8,29 @@ import { AccountPageComponent } from './account-page/account-page.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { InfluencersComponent } from './influencers/influencers.component';
 import { AdvertisersComponent } from './advertisers/advertisers.component';
+
 import { RegisterPageComponent } from './register-page/register-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule, NgForm } from '@angular/forms';
-import {MatCard, MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { FormsModule, NgForm } from '@angular/forms';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 
 const appRoutes: Routes = [
   { path: 'influencers', component: InfluencersComponent },
   { path: 'advertisers', component: AdvertisersComponent },
+  { path: 'login', component: LoginPageComponent },
+  // { path: 'signup', component: InfluencersComponent },
 ];
 @NgModule({
   declarations: [
@@ -31,7 +41,8 @@ const appRoutes: Routes = [
     FooterComponent,
     AccountPageComponent,
     RegisterPageComponent,
-    
+    LoginPageComponent
+
 
   ],
   imports: [
@@ -40,12 +51,18 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatFormFieldModule,
     FormsModule,
-    MatCardModule,
     ReactiveFormsModule,
     CommonModule,
+    MatSlideToggleModule,
+    MatInputModule,
     MatButtonModule,
-    MatInputModule
-    
+    MatCardModule,
+    FormsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
