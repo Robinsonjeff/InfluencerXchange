@@ -1,42 +1,43 @@
 
 
-   <mat-card>
-    <mat-card-title>Registration Form</mat-card-title>
+   <mat-card style="margin: auto; margin-top: 15px;">
+    <mat-card-header>
+        <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
     <mat-card-content>
         <form #ngForm (ngSubmit)="formSubmit(firstName.value, lastName.value,userName.value,password.value,phoneNumber.value,email.value,age.value,'')" >
-            <div>
+            <mat-form-field>
+                <label>Username</label>
+                <input matInput #userName placeholder="example123" required style="color: black;">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <label>Email</label>
+                <input matInput type="email" placeholder="example@example.com" #email required>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <label>Password</label>
+                <input matInput type="password" placeholder="....." #password required>
+              </mat-form-field>
                 <mat-form-field>
-                    <label>First </label>
-                    <input matInput #firstName  required style="color: black;">   
+                    <label>First Name</label>
+                    <input matInput #firstName  placeholder="Johnny" required style="color: black;">
                 </mat-form-field>
                 <mat-form-field>
-                    <label> Last </label>
-                    <input matInput #lastName  required style="color: black;">  
+                    <label>Last Name</label>
+                    <input matInput #lastName  placeholder="Appleseed" required style="color: black;">
                 </mat-form-field>
-                <mat-form-field>
-                    <label>User Name </label>
-                    <input matInput #userName  required style="color: black;">   
-                </mat-form-field>
-                <mat-form-field>
-                    <label> Password </label>
-                    <input matInput #password  required style="color: black;">  
-                </mat-form-field>
-            </div>
+               
             <div>
                 <mat-form-field>
                     <label>Phone Number</label>
-                    <input matInput #phoneNumber  required style="color: black;">
-                </mat-form-field>
-                <mat-form-field>
-                    <label>Email </label>
-                    <input matInput #email  required style="color: black;">   
+                    <input matInput placeholder="xxx-xxx-xxxx" #phoneNumber  required style="color: black;">
                 </mat-form-field>
                 <mat-form-field>
                     <label>Age</label>
                     <input matInput  #age type="number" required style="color:black;">
                 </mat-form-field>
             
-                <mat-radio-group #accountType aria-label="Account Type" (change)="updateAccountType($event)" required>
+                <mat-radio-group style="display: flex; justify-content: center;" #accountType aria-label="Account Type" (change)="updateAccountType($event)" required>
                     <mat-radio-button value="Influencer">Influencer</mat-radio-button>
                     <mat-radio-button value="Advertiser">Advertiser</mat-radio-button>
                 </mat-radio-group>  

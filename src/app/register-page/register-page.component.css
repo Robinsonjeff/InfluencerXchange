@@ -1,18 +1,36 @@
-mat-form-field{
-    padding:50px;
-    
-}
-mat-card{
-    background-color: rgb(207, 207, 213);
-}
-input{
-    background-color: white;
 
-
-}
 
 label{
     color: purple;
     font-weight: bold;
     
 }
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+  
+  mat-card {
+    width: 100%;
+    max-width: 400px;
+  } 
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  } 
+  
+  .button-container {
+    display: flex;
+    justify-content: end;
+  }
+  mat-card-header{
+    font-size: larger;
+    margin-bottom: 20px;
+  }
+  button {
+    font-size: medium;
+    font:bolder;
+  }
