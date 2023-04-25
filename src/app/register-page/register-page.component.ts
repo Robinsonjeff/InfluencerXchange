@@ -27,7 +27,9 @@ export class RegisterPageComponent {
     this.accountType = $event.value;
   }
   
-
+  goToLogin(){
+    this.router.navigate(["/login"]);
+  }
   onSubmit(){
     console.log("Submited")
   }

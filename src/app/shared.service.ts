@@ -9,7 +9,7 @@ export class SharedService {
 
   constructor(private http: HttpClient) {}
 
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'https://crypto-prices-api-production.up.railway.app';
 
   private loggedInAccountSubject = new BehaviorSubject<any>(null);
   

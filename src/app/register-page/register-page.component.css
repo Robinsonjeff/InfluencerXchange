@@ -25,6 +25,7 @@ label{
   .button-container {
     display: flex;
     justify-content: end;
+    gap: 5px;
   }
   mat-card-header{
     font-size: larger;
