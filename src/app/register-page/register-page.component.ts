@@ -40,9 +40,6 @@ export class RegisterPageComponent {
     this.phoneNumber = phoneNumber;
     this.email = email;
     this.age = parseInt(age);
-    // this.accountType = "advertiser";
-
-    console.log(this.accountType);
 
     const registerRes = this.sharedService.register({username:userName,password:password,phoneNumber,accountType:this.accountType,firstName,lastName,email,age:this.age}).subscribe(
       (response:any) => {

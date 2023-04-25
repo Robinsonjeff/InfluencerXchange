@@ -3,7 +3,7 @@
    <mat-card>
     <mat-card-title>Registration Form</mat-card-title>
     <mat-card-content>
-        <form (ngSubmit)="onSubmit()" >
+        <form #ngForm (ngSubmit)="formSubmit(firstName.value, lastName.value,userName.value,password.value,phoneNumber.value,email.value,age.value,'')" >
             <div>
                 <mat-form-field>
                     <label>First </label>
@@ -43,7 +43,7 @@
               
             </div>  
             <div class="button-container">
-                <button mat-raised-button color="primary" type="submit" (click)="formSubmit(firstName.value, lastName.value,userName.value,password.value,phoneNumber.value,email.value,age.value,'')">Register</button>
+                <button [disabled]="!ngForm.checkValidity()" mat-raised-button color="primary" type="submit">Register</button>
             </div>
             
         </form>
