@@ -30,7 +30,7 @@ const appRoutes: Routes = [
   { path: 'influencers', component: InfluencersComponent },
   { path: 'advertisers', component: AdvertisersComponent },
   { path: 'login', component: LoginPageComponent },
-  // { path: 'signup', component: InfluencersComponent },
+  { path: 'signup', component: RegisterPageComponent },
 ];
 @NgModule({
   declarations: [

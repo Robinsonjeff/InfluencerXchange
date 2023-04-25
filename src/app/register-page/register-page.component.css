@@ -2,7 +2,16 @@ mat-form-field{
     padding:50px;
     
 }
-
+mat-card{
+    background-color: bisque;
+}
 input{
     background-color: white;
+
+
+}
+
+label{
+    color: blue;
+    
 }
