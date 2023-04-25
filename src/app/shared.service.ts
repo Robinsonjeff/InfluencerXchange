@@ -19,6 +19,7 @@ export class SharedService {
     firstName: string;
     lastName: string;
     email: string;
+    age:number;
     }): Observable<any> {
       return this.http.post(`${this.baseUrl}/register`, userData);
     }

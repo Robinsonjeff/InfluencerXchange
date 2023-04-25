@@ -36,14 +36,14 @@
                     <input matInput  #age type="number" required style="color:black;">
                 </mat-form-field>
             
-                <mat-radio-group #accountType aria-label="Account Type">
+                <mat-radio-group #accountType aria-label="Account Type" (change)="updateAccountType($event)">
                     <mat-radio-button value="Influencer">Influencer</mat-radio-button>
                     <mat-radio-button value="Advertiser">Advertiser</mat-radio-button>
                 </mat-radio-group>  
               
             </div>  
             <div class="button-container">
-                <button mat-raised-button color="primary" type="submit" (click)="formSubmit(firstName.value, lastName.value,userName.value,password.value, phoneNumber.value,email.value,age.value)">Register</button>
+                <button mat-raised-button color="primary" type="submit" (click)="formSubmit(firstName.value, lastName.value,userName.value,password.value,phoneNumber.value,email.value,age.value,'')">Register</button>
             </div>
             
         </form>
