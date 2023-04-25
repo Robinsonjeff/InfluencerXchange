@@ -16,3 +16,7 @@ label{
     font-weight: bold;
     
 }
+
+mat-spinner{
+    height:36px;
+}
