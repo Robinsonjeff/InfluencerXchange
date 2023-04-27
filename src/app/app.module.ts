@@ -14,7 +14,6 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -68,8 +67,7 @@ const appRoutes: Routes = [
     MatSidenavModule,
     MatListModule,
     MatRadioModule,
-    HttpClientModule,
-    MatProgressSpinnerModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
