@@ -11,9 +11,7 @@ export class AppComponent {
   title = 'InfluencerXchange';
 
   constructor(private sharedService: SharedService) {
-    this.sharedService.loginCredentials$.subscribe((credentials) => {
-      this.login(credentials);
-    });
+ 
   }
   //get from mongoDB
  
@@ -30,6 +28,5 @@ export class AppComponent {
 
   login(loginCredentials:any)
   {
-    console.log(loginCredentials)
   }
 }

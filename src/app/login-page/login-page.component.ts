@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SharedService } from '../shared.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -10,17 +11,51 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent {
   
-  @Output() onLogin = new EventEmitter<{email: string, password: string}>();
   
   
-  constructor(private sharedService: SharedService, private router: Router) {}
+  constructor(private sharedService: SharedService,
+    private snackBar: MatSnackBar,
+    private router: Router) {}
   
   login(email: string, password: string) {
-    this.sharedService.emitLoginCredentials({ email, password });
+    console.log("here")
+    const loginRes = this.sharedService.login({username:email,password:password}).subscribe(
+      (response:any) => {
+        console.log(response)
+        this.sharedService.setLoggedInAccount(response);
+        if(response.profile.accountType === 'Advertiser'){
+          this.router.navigate(['/influencers'])
+        } else {
+          this.router.navigate(['/advertisers'])
+
+        }
+        this.snackBar.open(
+          `Login Successful, welcome ${response.profile.firstName}!`,
+          'Close',
+          {
+            duration: 5000,
+            horizontalPosition: 'center',
+            verticalPosition: 'top',
+          }
+        );
+      },(error) => {
+        this.snackBar.open(
+          `Error during login: ${error.message}`,
+          'Close',
+          {
+            duration: 5000,
+            horizontalPosition: 'center',
+            verticalPosition: 'top',
+          }
+        );
+      }
+    )
   }
 
   goToSignUp(){
     this.router.navigate(['/signup']);
   }
+
+  
   
 }
