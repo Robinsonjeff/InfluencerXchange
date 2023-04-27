@@ -21,7 +21,9 @@ label{
     width: 100%;
     margin-bottom: 16px;
   } 
-  
+  mat-spinner{
+    height:36px;
+} 
   .button-container {
     display: flex;
     justify-content: end;
