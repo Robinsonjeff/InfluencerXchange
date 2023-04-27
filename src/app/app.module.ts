@@ -27,7 +27,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 const appRoutes: Routes = [
   { path: 'influencers', component: InfluencersComponent },
   { path: 'advertisers', component: AdvertisersComponent },
@@ -68,7 +68,8 @@ const appRoutes: Routes = [
     MatListModule,
     MatRadioModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

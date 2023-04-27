@@ -1,12 +1,12 @@
-<div class="navbar">
-    <mat-toolbar style="display: flex; flex-flow: row; justify-content: space-between; z-index: 1000000;">
+<div class="navbar" style="z-index: 100;">
+    <mat-toolbar style="display: flex; flex-flow: row; justify-content: space-between; ">
       <span class="navText">InfluencerXchange</span>
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
     </mat-toolbar>
 </div>
-<mat-sidenav-container class="sidenav-container" (backdropClick)="sidenav.toggle()" [hasBackdrop]="true">
+<mat-sidenav-container class="sidenav-container" (backdropClick)="sidenav.toggle()" [hasBackdrop]="true" style="height: 100%;">
     <mat-sidenav #sidenav mode="over" position="end" style="min-width: 300px;">
       <mat-nav-list disableRipple="" style=" margin-bottom: 50px;">
         <a mat-list-item *ngIf="!activeAccount" routerLink="/login" (click)="sidenav.toggle()">Login</a>
@@ -26,5 +26,7 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <router-outlet></router-outlet>
+        <div style="margin: 50px;"></div>
+        <app-footer></app-footer>
     </mat-sidenav-content>
 </mat-sidenav-container>
