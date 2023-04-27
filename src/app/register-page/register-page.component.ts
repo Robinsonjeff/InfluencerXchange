@@ -18,22 +18,26 @@ export class RegisterPageComponent {
   accountType:string = '';
   progressValue:number = 0;
   filledInputs:number = 0;
+  inputs: string[] = [];
 
   
   constructor(private sharedService: SharedService,private snackBar: MatSnackBar,
     private router: Router) {}
   
-    onInputChange(){
+    onInputChange(input:string){
+      
       const numOfInputs = 8;
-      this.filledInputs+= 1;
-      console.log(this.filledInputs);
- 
+      if (this.inputs.includes(input) == false){
+        this.filledInputs+= 1;
+        this.inputs.push(input); 
+      }
+    
       this.progressValue = (this.filledInputs/numOfInputs) *100;
  
      }
   updateAccountType($event: { value: string; }){
     this.accountType = $event.value;
-    this.onInputChange();
+    this.onInputChange('accountType');
   }
   
   goToLogin(){

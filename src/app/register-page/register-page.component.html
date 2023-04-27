@@ -8,33 +8,33 @@
         <form #ngForm (ngSubmit)="formSubmit(firstName.value, lastName.value,userName.value,password.value,phoneNumber.value,email.value,age.value,'')" >
             <mat-form-field>
                 <label>Username</label>
-                <input matInput #userName placeholder="example123" required style="color: black;" (change)="onInputChange()">
+                <input matInput #userName placeholder="example123" required style="color: black;" (change)="onInputChange('userName')">
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <label>Email</label>
-                <input matInput type="email" placeholder="example@example.com" #email required (change)="onInputChange()">
+                <input matInput type="email" placeholder="example@example.com" #email required (change)="onInputChange('email')">
               </mat-form-field>
               <mat-form-field appearance="fill">
                 <label>Password</label>
-                <input matInput type="password" placeholder="....." #password required (change)="onInputChange()">
+                <input matInput type="password" placeholder="....." #password required (change)="onInputChange('password')">
               </mat-form-field>
                 <mat-form-field>
                     <label>First Name</label>
-                    <input matInput #firstName  placeholder="Johnny" required style="color: black;" (change)="onInputChange()">
+                    <input matInput #firstName  placeholder="Johnny" required style="color: black;" (change)="onInputChange('firstName')">
                 </mat-form-field>
                 <mat-form-field>
                     <label>Last Name</label>
-                    <input matInput #lastName  placeholder="Appleseed" required style="color: black;" (change)="onInputChange()">
+                    <input matInput #lastName  placeholder="Appleseed" required style="color: black;" (change)="onInputChange('lastName')">
                 </mat-form-field>
                
             <div>
                 <mat-form-field>
                     <label>Phone Number</label>
-                    <input matInput placeholder="xxx-xxx-xxxx" #phoneNumber  required style="color: black;" (change)="onInputChange()">
+                    <input matInput placeholder="xxx-xxx-xxxx" #phoneNumber  required style="color: black;" (change)="onInputChange('phoneNumber')">
                 </mat-form-field>
                 <mat-form-field>
                     <label>Age</label>
-                    <input matInput  #age type="number" required style="color:black;" (change)="onInputChange()">
+                    <input matInput  #age type="number" required style="color:black;" (change)="onInputChange('age')">
                 </mat-form-field>
             
                 <mat-radio-group style="display: flex; justify-content: center;" #accountType aria-label="Account Type" (change)="updateAccountType($event)" required>
