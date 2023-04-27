@@ -1,5 +1,5 @@
 <div class="navbar">
-    <mat-toolbar style="display: flex; flex-flow: row; justify-content: space-between;">
+    <mat-toolbar style="display: flex; flex-flow: row; justify-content: space-between; z-index: 1000000;">
       <span class="navText">InfluencerXchange</span>
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
@@ -8,12 +8,21 @@
 </div>
 <mat-sidenav-container class="sidenav-container" (backdropClick)="sidenav.toggle()" [hasBackdrop]="true">
     <mat-sidenav #sidenav mode="over" position="end" style="min-width: 300px;">
-      <mat-nav-list disableRipple="">
-        <a mat-list-item routerLink="/login" (click)="sidenav.toggle()">Login</a>
-        <a mat-list-item routerLink="/signup" (click)="sidenav.toggle()">Sign up</a>
-        <a mat-list-item routerLink="/influencers" (click)="sidenav.toggle()">Influencers</a>
-        <a mat-list-item routerLink="/advertisers" (click)="sidenav.toggle()">Advertisers</a>
+      <mat-nav-list disableRipple="" style=" margin-bottom: 50px;">
+        <a mat-list-item *ngIf="!activeAccount" routerLink="/login" (click)="sidenav.toggle()">Login</a>
+        <a mat-list-item *ngIf="!activeAccount" routerLink="/signup" (click)="sidenav.toggle()">Sign up</a>
+        <a mat-list-item *ngIf="activeAccountType != 'influencer' && activeAccount" routerLink="/influencers" (click)="sidenav.toggle()">Influencers</a>
+        <a mat-list-item *ngIf="activeAccountType != 'advertiser' && activeAccount" routerLink="/advertisers" (click)="sidenav.toggle()">Advertisers</a>
       </mat-nav-list>
+      <div *ngIf="activeAccount" style="display: flex; flex-flow: row; justify-content: center; align-items: center;">
+        <img style="border-radius: 100px;" [src]="gravatarUrl" />
+        <h1 style="display: contents;">{{activeAccount}}</h1>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <button *ngIf="activeAccount" mat-raised-button style="background-color: red; color: white; text-align: center; margin: 5px;" (click)="logout()">Logout</button>
+      </div>
+
+      
     </mat-sidenav>
     <mat-sidenav-content>
         <router-outlet></router-outlet>

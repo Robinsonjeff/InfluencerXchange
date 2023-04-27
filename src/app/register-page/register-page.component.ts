@@ -43,7 +43,11 @@ export class RegisterPageComponent {
     this.onInputChange();
     
   }
- 
+
+  
+  goToLogin(){
+    this.router.navigate(["/login"]);
+  }
 
   onSubmit(){
     console.log("Submited")

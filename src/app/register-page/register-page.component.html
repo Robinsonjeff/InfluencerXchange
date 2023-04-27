@@ -37,6 +37,7 @@
             <input matInput #age type="number" required style="color:black;" (change)="onInputChange()">
             </mat-form-field>
 
+
             <mat-radio-group #accountType aria-label="Account Type" (change)="updateAccountType($event)" required>
             <mat-radio-button value="Influencer">Influencer</mat-radio-button>
             <mat-radio-button value="Advertiser">Advertiser</mat-radio-button>
@@ -44,6 +45,56 @@
         </div>
         <div id="submitDiv"style="display:flex; justify-content:right; ">
             <mat-spinner style="height:36px; width:36px; margin-right:25px;" mode="determinate" [value]="progressValue" #progress aria-label="Registation Progress"></mat-spinner>
+
+   <mat-card style="margin: auto; margin-top: 15px;">
+    <mat-card-header>
+        <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form #ngForm (ngSubmit)="formSubmit(firstName.value, lastName.value,userName.value,password.value,phoneNumber.value,email.value,age.value,'')" >
+            <mat-form-field>
+                <label>Username</label>
+                <input matInput #userName placeholder="example123" required style="color: black;">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <label>Email</label>
+                <input matInput type="email" placeholder="example@example.com" #email required>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <label>Password</label>
+                <input matInput type="password" placeholder="....." #password required>
+              </mat-form-field>
+                <mat-form-field>
+                    <label>First Name</label>
+                    <input matInput #firstName  placeholder="Johnny" required style="color: black;">
+                </mat-form-field>
+                <mat-form-field>
+                    <label>Last Name</label>
+                    <input matInput #lastName  placeholder="Appleseed" required style="color: black;">
+                </mat-form-field>
+               
+            <div>
+                <mat-form-field>
+                    <label>Phone Number</label>
+                    <input matInput placeholder="xxx-xxx-xxxx" #phoneNumber  required style="color: black;">
+                </mat-form-field>
+                <mat-form-field>
+                    <label>Age</label>
+                    <input matInput  #age type="number" required style="color:black;">
+                </mat-form-field>
+            
+                <mat-radio-group style="display: flex; justify-content: center;" #accountType aria-label="Account Type" (change)="updateAccountType($event)" required>
+                    <mat-radio-button value="Influencer">Influencer</mat-radio-button>
+                    <mat-radio-button value="Advertiser">Advertiser</mat-radio-button>
+                </mat-radio-group>  
+              
+            </div>  
+            <div class="button-container">
+                <button (click)="goToLogin()" mat-raised-button color="secondary">Login</button>
+                <button [disabled]="!ngForm.checkValidity()" mat-raised-button color="primary" type="submit">Register</button>
+            </div>
+            
+        </form>
 
             <button  [disabled]="!ngForm.checkValidity()" mat-raised-button color="primary" type="submit">Register</button>
         </div>
