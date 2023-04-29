@@ -2,7 +2,7 @@
     <mat-toolbar style="display: flex; flex-flow: row; justify-content: space-between; ">
       <span class="navText">InfluencerXchange</span>
       <div>
-        <button mat-icon-button (click)="addPost()">
+        <button mat-icon-button *ngIf="activeAccount" (click)="openAddPostDialog()">
           <mat-icon>add</mat-icon>
         </button>
         <button mat-icon-button (click)="sidenav.toggle()">

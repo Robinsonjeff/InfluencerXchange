@@ -49,9 +49,10 @@ export class NavBarComponent {
     )
   }
   
-  addPost(){
+  openAddPostDialog(){
     const dialogRef = this.dialog.open(AddPostDialogComponent);
   }
+
 
   logout(){
     this.sharedService.setLoggedInAccount({});
