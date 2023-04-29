@@ -1,11 +1,22 @@
 <div class="navbar" style="z-index: 100;">
     <mat-toolbar style="display: flex; flex-flow: row; justify-content: space-between; ">
       <span class="navText">InfluencerXchange</span>
-      <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
+      <div>
+        <button mat-icon-button (click)="addPost()">
+          <mat-icon>add</mat-icon>
+        </button>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      
+        
     </mat-toolbar>
 </div>
+
+
+
+
 <mat-sidenav-container class="sidenav-container" (backdropClick)="sidenav.toggle()" [hasBackdrop]="true" style="height: 100%;">
     <mat-sidenav #sidenav mode="over" position="end" style="min-width: 300px;">
       <mat-nav-list disableRipple="" style=" margin-bottom: 50px;">

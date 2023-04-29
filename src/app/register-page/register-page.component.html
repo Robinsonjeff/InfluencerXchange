@@ -1,5 +1,5 @@
 
-<mat-progress-bar style="width:100%; position: fixed; z-index: 100;" mode="determinate" [value]="progressValue" #progress aria-label="Registation Progress"></mat-progress-bar>
+<mat-progress-bar style="width:100%; top:64px; position: fixed; z-index: 100;" mode="determinate" [value]="progressValue" #progress aria-label="Registation Progress"></mat-progress-bar>
    
    <mat-card style="margin: auto; margin-top: 15px;">
     <mat-card-header>
@@ -12,15 +12,15 @@
             <div>
                 <mat-form-field>
                     <label>Username</label>
-                    <input matInput #userName placeholder="example123" required style="color: black;" (change)="onInputChange()">
+                    <input matInput #userName placeholder="example123" required style="color: black;" (change)="onInputChange('userName')">
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <label>Email</label>
-                    <input matInput type="email" placeholder="example@example.com" #email required (change)="onInputChange()">
+                    <input matInput type="email" placeholder="example@example.com" #email required (change)="onInputChange('email')">
                   </mat-form-field>
                   <mat-form-field appearance="fill">
                     <label>Password</label>
-                    <input matInput type="password" placeholder="....." #password required (change)="onInputChange()">
+                    <input matInput type="password" placeholder="....." #password required (change)="onInputChange('password')">
                   </mat-form-field>
 
 
