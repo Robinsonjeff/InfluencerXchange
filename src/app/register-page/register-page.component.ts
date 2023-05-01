@@ -41,7 +41,7 @@ export class RegisterPageComponent {
   }
   
   goToLogin(){
-    this.router.navigate(["/login"]);
+    this.router.navigate([""]);
   }
   onSubmit(){
     console.log("Submited")
