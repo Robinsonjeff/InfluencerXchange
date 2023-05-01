@@ -41,6 +41,8 @@ export class SharedService {
     return this.loggedInAccountSubject.asObservable();
   }
 
- 
+  createPost(post:any): Observable<any>{
+    return this.http.post(`${this.baseUrl}/createPost`,post)
+  }
 
 }

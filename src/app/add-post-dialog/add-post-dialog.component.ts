@@ -26,12 +26,21 @@ export class AddPostDialogComponent {
     }
 
     addPost(title:string,body:string,price:string){
-      
+
+      let userId = "";
+      let accountType = "";
+
       this.service.getLoggedInAccount().subscribe((account) =>
       {
-        console.log("Inside subscribe");
-        this.service.createPost({userId:account.username,title:this.title,body:this.body,price:this.price,accountType:account.accountType});
+        userId = account.profile.username;
+        accountType = account.profile.accountType;
       });
+
+
+      this.service.createPost({userId,title,body,price,accountType}).subscribe((response:any) => {
+      })
+
+
 
       const dialogReg = this.dialog.closeAll();
       
