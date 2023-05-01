@@ -59,6 +59,6 @@ export class NavBarComponent {
     this.activeAccount = "";
     this.activeAccountType = "";
     this.sidenav?.toggle();
-    this.router.navigate(['/login']);
+    this.router.navigate(['']);
   }
 }
