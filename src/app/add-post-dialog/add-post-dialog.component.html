@@ -3,7 +3,12 @@
     <mat-dialog-content>
         <h2>Create New Post</h2>
         <div>
-            
+            <label>Title</label>
+            <input matInput #title>
+            <label>Body</label>
+            <input matInput #body>
+            <label>Price</label>
+            <input matInput #price type="number">
         </div>
 
   
@@ -11,6 +16,6 @@
     </mat-dialog-content>
     <mat-dialog-actions>
       <button mat-raised-button (click)="closeDialog()">Cancel</button>
-      <button mat-raised-button (click)="addPost()">Create Post</button>
+      <button mat-raised-button (click)="addPost(title.value,body.value,price.value)">Create Post</button>
     </mat-dialog-actions>
 </form>
