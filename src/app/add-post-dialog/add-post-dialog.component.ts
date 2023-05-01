@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-add-post-dialog',
@@ -7,9 +8,16 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./add-post-dialog.component.css']
 })
 export class AddPostDialogComponent {
+  title:string = '';
+  body:string = '';
+  price:string = '';
 
-  constructor( private dialog: MatDialog) {
-      
+
+  username:string = '';
+  accountType = '';
+
+  constructor( private dialog: MatDialog, private service:SharedService) {
+  
     }
 
   
@@ -17,8 +25,18 @@ export class AddPostDialogComponent {
       const dialogRef = this.dialog.closeAll();
     }
 
-    addPost(){
-      return;
+    addPost(title:string,body:string,price:string){
+      
+      this.service.getLoggedInAccount().subscribe((account) =>
+      {
+        console.log("Inside subscribe");
+        this.service.createPost({userId:account.username,title:this.title,body:this.body,price:this.price,accountType:account.accountType});
+      });
+
+      const dialogReg = this.dialog.closeAll();
+      
+
+
     }
 
 }
