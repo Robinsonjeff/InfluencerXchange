@@ -3,6 +3,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { SharedService } from '../shared.service';
 import { MatSidenav } from '@angular/material/sidenav';
+import { MatDialog } from '@angular/material/dialog';
+import { AddPostDialogComponent } from '../add-post-dialog/add-post-dialog.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -24,7 +26,8 @@ export class NavBarComponent {
 
   constructor(private sharedService: SharedService,
     private snackBar: MatSnackBar,
-    private router: Router) {
+    private router: Router,
+    private dialog: MatDialog) {
       
     }
 
@@ -45,6 +48,11 @@ export class NavBarComponent {
       }
     )
   }
+  
+  openAddPostDialog(){
+    const dialogRef = this.dialog.open(AddPostDialogComponent);
+  }
+
 
   logout(){
     this.sharedService.setLoggedInAccount({});

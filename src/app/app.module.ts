@@ -28,10 +28,14 @@ import { MatListModule } from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { AddPostDialogComponent } from './add-post-dialog/add-post-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
+
 const appRoutes: Routes = [
   { path: 'influencers', component: InfluencersComponent },
   { path: 'advertisers', component: AdvertisersComponent },
-  { path: 'login', component: LoginPageComponent },
+  { path: '', component: LoginPageComponent },
   { path: 'signup', component: RegisterPageComponent },
 ];
 @NgModule({
@@ -43,7 +47,8 @@ const appRoutes: Routes = [
     FooterComponent,
     AccountPageComponent,
     RegisterPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    AddPostDialogComponent
 
 
   ],
@@ -69,7 +74,9 @@ const appRoutes: Routes = [
     MatRadioModule,
     HttpClientModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatDialogModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
