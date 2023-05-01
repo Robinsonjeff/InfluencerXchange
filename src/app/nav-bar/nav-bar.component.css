@@ -9,6 +9,7 @@
     left: 0;
     top: 0;
     width: 100%;
+    z-index: 1000;
 }
 
 
@@ -58,6 +59,7 @@ html, body {
   
   .sidenav-container {
     margin-top: 64px; /* Adjust this value to match your navbar height */
+    margin-bottom: 50px;
 }
 
   .mat-drawer-backdrop.mat-drawer-shown {
