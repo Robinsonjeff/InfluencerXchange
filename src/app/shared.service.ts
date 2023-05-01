@@ -41,6 +41,7 @@ export class SharedService {
     return this.loggedInAccountSubject.asObservable();
   }
 
+
   createPost(post:any) {
     console.log("In createPost");
     console.log(this.http.post(`${this.baseUrl}/createPost`, post));
@@ -49,5 +50,6 @@ export class SharedService {
   
 
  
+
 
 }
