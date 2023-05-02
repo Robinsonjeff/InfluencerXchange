@@ -22,7 +22,7 @@ export class AddPostDialogComponent {
 
   
     closeDialog(){
-      const dialogRef = this.dialog.closeAll();
+      this.dialog.closeAll();
     }
 
     addPost(title:string,body:string,price:string){
@@ -44,6 +44,8 @@ export class AddPostDialogComponent {
 
 
       this.dialog.closeAll();
+
+      
       
 
 
