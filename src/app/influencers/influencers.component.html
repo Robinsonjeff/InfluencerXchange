@@ -1,10 +1,18 @@
 <div class="container">
     <p>Active Influencers</p>
   
-    <div class="personContainer" *ngFor="let person of influencers">
-      <p class="blurText">{{person.name}}</p> 
-      <p>Post Price: ${{person.postPrice}}</p>
-      <p>Target Audience: {{person.targetAudience}}</p>
-      <button class="button" (click)="goToSocialSite(person.socialMediaLink)">Show more</button>
+    <div class="personContainer" *ngFor="let post of allPosts">
+      <mat-card style="height:300px; display:flex; flex-flow: row;">
+        <mat-card-content>
+          <div>
+            <p class="blurText">{{post.userId}}</p> 
+          </div>
+          <p>Title: {{post.title}}</p>
+          <p>{{post.body}}</p>
+          <p>Price: ${{post.price}}</p>
+          <!-- <button class="button" (click)="goToSocialSite(person.socialMediaLink)">Show more</button> -->
+          <button class="button" >Show more</button>
+      </mat-card-content>
+      </mat-card>
     </div>
   </div>

@@ -24,9 +24,10 @@ export class LoginPageComponent {
         console.log(response)
         this.sharedService.setLoggedInAccount(response);
         if(response.profile.accountType === 'Advertiser'){
-          this.router.navigate(['/influencers'])
-        } else {
           this.router.navigate(['/advertisers'])
+        } else {
+          this.router.navigate(['/influencers'])
+          
 
         }
         this.snackBar.open(

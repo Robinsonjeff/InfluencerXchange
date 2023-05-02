@@ -42,7 +42,8 @@ export class AddPostDialogComponent {
 
 
 
-      const dialogReg = this.dialog.closeAll();
+
+      this.dialog.closeAll();
       
 
 
