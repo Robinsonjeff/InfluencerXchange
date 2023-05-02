@@ -6,6 +6,22 @@ import { Subject, Observable, BehaviorSubject } from 'rxjs';
 })
 export class SharedService {
 
+  post1: any = {
+    userId: 'billybob',
+    title:  'hi',
+    body: 'chicken',
+    price: '33'
+  }
+
+  post2: any = {
+    userId: 'billybob',
+    title:  'h2i',
+    body: 'chidfcken',
+    price: '333'
+  }
+
+  allPosts: any = [];
+  
 
   constructor(private http: HttpClient) {}
 
@@ -14,6 +30,8 @@ export class SharedService {
   private loggedInAccountSubject = new BehaviorSubject<any>(null);
   
   loggedInAccount$ = this.loggedInAccountSubject.asObservable();
+
+  
 
   register(userData: {
     username: string;
@@ -28,6 +46,9 @@ export class SharedService {
       return this.http.post(`${this.baseUrl}/register`, userData);
     
   }
+
+  
+
 
   login(credentials: { username: string; password: string }): Observable<any> {
     return this.http.post(`${this.baseUrl}/login`, credentials);
@@ -46,6 +67,11 @@ export class SharedService {
     console.log("In createPost");
     console.log(this.http.post(`${this.baseUrl}/createPost`, post));
     return this.http.post(`${this.baseUrl}/createPost`, post);
+  }
+
+  getPosts(): Observable<any>{
+   return this.http.get(`${this.baseUrl}/getPosts`)
+     
   }
   
 
