@@ -1,15 +1,21 @@
 <div class="container">
     <p>Active Influencers</p>
-  
+    <div *ngIf="allPosts.length < 1">
+      <img src="../../assets/Rolling-1s-200px.gif">
+    </div>
     <div class="personContainer" *ngFor="let post of allPosts">
-      <mat-card style="height:300px; display:flex; flex-flow: row;">
+      <mat-card style="height:300px; display:flex; flex-flow: row; justify-content: center; align-items: center; text-align: left;">
         <mat-card-content>
           <div>
-            <p class="blurText">{{post.userId}}</p> 
+            <h1 class="blurText" style="text-align: left;">{{post.userId}}</h1> 
           </div>
           <p>Title: {{post.title}}</p>
           <p>{{post.body}}</p>
-          <p>Price: ${{post.price}}</p>
+          <span>Price: 
+            <p class="blurText">
+              ${{post.price}}
+            </p>
+          </span>
           <!-- <button class="button" (click)="goToSocialSite(person.socialMediaLink)">Show more</button> -->
           <button class="button" >Show more</button>
       </mat-card-content>

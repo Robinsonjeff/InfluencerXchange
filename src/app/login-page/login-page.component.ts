@@ -11,25 +11,28 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class LoginPageComponent {
   
-  
+  loadingLogin: boolean = false;
   
   constructor(private sharedService: SharedService,
     private snackBar: MatSnackBar,
     private router: Router) {}
   
   login(email: string, password: string) {
-    console.log("here")
+    this.loadingLogin = true;
+
     const loginRes = this.sharedService.login({username:email,password:password}).subscribe(
       (response:any) => {
-        console.log(response)
+
         this.sharedService.setLoggedInAccount(response);
+        
+        this.loadingLogin = false;
+        
         if(response.profile.accountType === 'Advertiser'){
           this.router.navigate(['/advertisers'])
         } else {
           this.router.navigate(['/influencers'])
-          
-
         }
+
         this.snackBar.open(
           `Login Successful, welcome ${response.profile.firstName}!`,
           'Close',
@@ -39,6 +42,7 @@ export class LoginPageComponent {
             verticalPosition: 'top',
           }
         );
+
       },(error) => {
         this.snackBar.open(
           `Error during login: ${error.message}`,
@@ -51,6 +55,7 @@ export class LoginPageComponent {
         );
       }
     )
+
   }
 
   goToSignUp(){
