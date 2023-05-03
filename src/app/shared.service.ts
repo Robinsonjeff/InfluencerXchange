@@ -71,7 +71,6 @@ export class SharedService {
 
   getPosts(): Observable<any>{
    return this.http.get(`${this.baseUrl}/getPosts`)
-     
   }
   
 

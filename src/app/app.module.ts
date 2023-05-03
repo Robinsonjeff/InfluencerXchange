@@ -35,8 +35,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 const appRoutes: Routes = [
   { path: 'influencers', component: InfluencersComponent },
   { path: 'advertisers', component: AdvertisersComponent },
-  { path: '', component: LoginPageComponent },
+  { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: RegisterPageComponent },
+  { path: '', redirectTo:'/login', pathMatch: 'full'}
 ];
 @NgModule({
   declarations: [
