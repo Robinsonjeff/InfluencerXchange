@@ -15,8 +15,6 @@ export class InfluencersComponent {
     ngOnInit(){
       this.sharedService.getPosts().subscribe((data) => {
           this.allPosts = data.posts;
-          console.log(this.allPosts);
-
         }, (error) => {
           console.log(error);
         });

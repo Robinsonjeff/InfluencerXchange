@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SharedService } from '../shared.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add-post-dialog',
@@ -16,7 +17,7 @@ export class AddPostDialogComponent {
   username:string = '';
   accountType = '';
 
-  constructor( private dialog: MatDialog, private service:SharedService) {
+  constructor( private dialog: MatDialog, private service:SharedService, private sb: MatSnackBar) {
   
     }
 
@@ -37,17 +38,36 @@ export class AddPostDialogComponent {
       });
 
 
-      this.service.createPost({userId,title,body,price,accountType}).subscribe((response:any) => {
+      this.service.createPost({userId,title,body,price,accountType}).subscribe((response:any) => 
+      {
+        if(response.success == true)
+        {
+          this.sb.open(
+            "Post succefully made",
+            "Close",
+            {
+              duration: 5000,
+              horizontalPosition: 'center',
+              verticalPosition: 'top',
+            }
+          )
+        } 
+        else 
+        {
+          this.sb.open(
+            "Unsuccessful post, try again",
+            "Close",
+            {
+              duration: 5000,
+              horizontalPosition: 'center',
+              verticalPosition: 'top',
+            }
+          )
+        }
+  
       })
 
-
-
-
       this.dialog.closeAll();
-
-      
-      
-
 
     }
 

@@ -13,27 +13,33 @@
         
     </mat-toolbar>
 </div>
-
 <mat-sidenav-container class="sidenav-container" (backdropClick)="sidenav.toggle()" [hasBackdrop]="true">
 
-    <mat-sidenav #sidenav mode="over" position="end" style="min-width: 300px;">
-      <mat-nav-list disableRipple="" style=" margin-bottom: 50px;">
+  <mat-sidenav #sidenav mode="over" position="end" style="min-width: 300px;display: flex; flex-flow: column;">
+    <div class="mat-drawer-inner-container">
+      <mat-nav-list disableRipple="" style="">
         <a mat-list-item *ngIf="!activeAccount" routerLink="/login" (click)="sidenav.toggle()">Login</a>
         <a mat-list-item *ngIf="!activeAccount" routerLink="/signup" (click)="sidenav.toggle()">Sign up</a>
         <a mat-list-item *ngIf="activeAccountType != 'influencer' && activeAccount" routerLink="/influencers" (click)="sidenav.toggle()">Influencers</a>
         <a mat-list-item *ngIf="activeAccountType != 'advertiser' && activeAccount" routerLink="/advertisers" (click)="sidenav.toggle()">Advertisers</a>
       </mat-nav-list>
-      <div *ngIf="activeAccount" style="display: flex; flex-flow: row; justify-content: center; align-items: center;">
+      <div *ngIf="activeAccount" class="account-info">
         <img style="border-radius: 100px;" [src]="gravatarUrl" />
         <h1 style="display: contents;">{{activeAccount}}</h1>
       </div>
-      <div style="display: flex; justify-content: center;">
+      <div class="logout-button-container">
         <button *ngIf="activeAccount" mat-raised-button style="background-color: red; color: white; text-align: center; margin: 5px;" (click)="logout()">Logout</button>
       </div>
+    </div>
 
-      
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <router-outlet></router-outlet>
-    </mat-sidenav-content>
+
+    
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <router-outlet></router-outlet>
+      <app-footer ></app-footer>
+
+  </mat-sidenav-content>
 </mat-sidenav-container>
+
+
