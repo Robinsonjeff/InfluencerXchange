@@ -60,5 +60,6 @@ export class NavBarComponent {
     this.activeAccountType = "";
     this.sidenav?.toggle();
     this.router.navigate(['']);
+    this.sharedService.isLoggedInBool = false;
   }
 }

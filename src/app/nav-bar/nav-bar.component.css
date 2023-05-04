@@ -10,6 +10,7 @@
     top: 0;
     width: 100%;
     z-index: 1000;
+    margin-bottom: 50px;
 }
 
 
@@ -50,16 +51,52 @@ html, body {
   
   mat-sidenav-container {
     overflow: hidden;
-
   }
   mat-sidenav-content {
 
   }
   .sidenav-container {
-    min-height: 100vh;
+    padding-top: 64px;
+    height: calc(100vh);
+  }
+  .account-info{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sidenav {
+
+    /* height: calc(100vh - (64px + 50px)); */
+    min-width: 300px;
     display: flex;
     flex-direction: column;
+    position: fixed;
   }
+  
+  .mat-drawer-inner-container {
+    flex-grow: 1;
+    padding-top: 64px;
+    height: calc(100% - 64px);
+    overflow-y: auto;
+  }
+  
+  .logout-button-container {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: #fff; /* Optional: Match the sidenav background color */
+  }
+  
+  button[mat-raised-button] {
+    background-color: red;
+    color: white;
+    text-align: center;
+    margin: 5px;
+  }
+  
+  
   
   mat-sidenav-content {
     flex: 1;
@@ -71,8 +108,6 @@ html, body {
   
   
   .sidenav-container {
-    margin-top: 64px; /* Adjust this value to match your navbar height */
-    margin-bottom: 50px;
 }
 
   .mat-drawer-backdrop.mat-drawer-shown {

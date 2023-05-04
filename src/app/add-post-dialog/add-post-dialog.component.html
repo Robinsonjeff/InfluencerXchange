@@ -2,20 +2,30 @@
     <!-- <mat-dialog-title>Create New Post</mat-dialog-title> -->
     <mat-dialog-content>
         <h2>Create New Post</h2>
-        <div>
-            <label>Title</label>
-            <input matInput #title>
-            <label>Body</label>
-            <input matInput #body>
-            <label>Price</label>
-            <input matInput #price type="number">
+        <div style="display: flex; flex-flow: column;">
+            <mat-form-field appearance="outline">
+                <mat-label>Title</mat-label>
+                <input matInput #title id="title">
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Price</mat-label>
+                <input matInput #price id="price" type="number">
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="mat-textarea">
+                <mat-label>Body</mat-label>
+                <textarea matInput #body id="body" placeholder="Im looking for..." cdkTextareaAutosize cdkAutosizeMinRows="5" cdkAutosizeMaxRows="10"></textarea>
+              </mat-form-field>
+              
+              
         </div>
 
+        <div style="height: 27px; margin:0; padding: 0;" *ngIf="!loading"></div>
+        <img style="height: 20px; margin:0; padding: 0;" src="../../assets/Rolling-1s-200px.gif" *ngIf="loading">
   
   
     </mat-dialog-content>
     <mat-dialog-actions>
       <button mat-raised-button (click)="closeDialog()">Cancel</button>
-      <button mat-raised-button (click)="addPost(title.value,body.value,price.value)">Create Post</button>
+      <button mat-raised-button color="primary" (click)="addPost(title.value,body.value,price.value)">Create Post</button>
     </mat-dialog-actions>
 </form>

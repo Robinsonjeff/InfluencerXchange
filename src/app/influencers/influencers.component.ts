@@ -9,22 +9,26 @@ import { Router } from '@angular/router';
 })
 export class InfluencersComponent {
 
-  constructor(private sharedService: SharedService,private router: Router) {};
+
+  constructor(private sharedService: SharedService,
+    private router: Router) {};
 
     allPosts: any = []
 
     ngOnInit(){
-      this.sharedService.getPosts().subscribe((data) => {
+      if(this.sharedService.isLoggedInBool == false){
+        this.router.navigate(['']);
+      }
+      //getting posts for Advertisers to see
+      this.sharedService.getPosts('Advertiser').subscribe((data) => {
           this.allPosts = data.posts;
-          console.log(this.allPosts);
-
         }, (error) => {
           console.log(error);
         });
        
     }
  
-  
+
   goToSocialSite(link:string){
     window.open(link);
   }

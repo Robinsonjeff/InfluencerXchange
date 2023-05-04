@@ -1,24 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 import { Subject, Observable, BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class SharedService {
 
-  post1: any = {
-    userId: 'billybob',
-    title:  'hi',
-    body: 'chicken',
-    price: '33'
-  }
-
-  post2: any = {
-    userId: 'billybob',
-    title:  'h2i',
-    body: 'chidfcken',
-    price: '333'
-  }
 
   allPosts: any = [];
   
@@ -30,6 +17,8 @@ export class SharedService {
   private loggedInAccountSubject = new BehaviorSubject<any>(null);
   
   loggedInAccount$ = this.loggedInAccountSubject.asObservable();
+
+  isLoggedInBool:boolean = false;
 
   
 
@@ -47,15 +36,16 @@ export class SharedService {
     
   }
 
-  
-
-
   login(credentials: { username: string; password: string }): Observable<any> {
     return this.http.post(`${this.baseUrl}/login`, credentials);
   }
 
   setLoggedInAccount(account:any){
+    this.isLoggedInBool = true;
     this.loggedInAccountSubject.next(account);
+  }
+
+  isLoggedIn(){
   }
 
   getLoggedInAccount(): Observable<any>{
@@ -64,13 +54,16 @@ export class SharedService {
 
 
   createPost(post:any) {
-    console.log("In createPost");
-    console.log(this.http.post(`${this.baseUrl}/createPost`, post));
     return this.http.post(`${this.baseUrl}/createPost`, post);
   }
 
-  getPosts(): Observable<any>{
-   return this.http.get(`${this.baseUrl}/getPosts`)
+  getPosts(accountType?:string,username?:string): Observable<any>{
+    if(username){
+      return this.http.get(`${this.baseUrl}/getPosts?accountType=${accountType}`)
+
+    } else {
+      return this.http.get(`${this.baseUrl}/getPosts?accountType=${accountType}&username=${username}`)
+    }
   }
   
 
