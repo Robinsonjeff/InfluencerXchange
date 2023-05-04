@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SharedService } from '../shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-advertisers',
@@ -7,11 +8,15 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./advertisers.component.css']
 })
 export class AdvertisersComponent {
-  constructor(private sharedService: SharedService) {};
+  constructor(private sharedService: SharedService,
+    private router: Router) {};
 
   allPosts: any = []
 
   ngOnInit(){
+    if(this.sharedService.isLoggedInBool == false){
+      this.router.navigate(['']);
+    }
     //getting posts for Influencer to see
     this.sharedService.getPosts('Influencer').subscribe((data) => {
         this.allPosts = data.posts;
