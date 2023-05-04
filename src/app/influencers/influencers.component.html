@@ -1,4 +1,4 @@
-<mat-card *ngFor="let post of allPosts" style="margin: 10px; width: 40%; margin: auto;">
+<mat-card *ngFor="let post of allPosts" class="container">
   <mat-card-header>
     <mat-card-title>
       <h2>{{post.title | uppercase}}</h2>
@@ -14,7 +14,11 @@
       <mat-icon>schedule</mat-icon>
       <span>{{post.timestamp | date: 'short'}}</span>
     </div>
-    <p>Posted by {{post.userId}}</p>
+    <div class="item">
+      <span>Posted by {{post.userId}}</span>
+      <img [src]="post.userId | pfpUrl" alt="pfp" style="border-radius: 100px; height: 20px;">
+    </div>
+
     <button (click)="visitAccount(post.userId)" mat-raised-button color="primary">Visit their account.</button>
   </mat-card-content>
 </mat-card>

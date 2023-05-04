@@ -11,7 +11,7 @@
             <div class="item">
             <mat-icon>person</mat-icon>
             <span>{{account.profile.username}}</span>
-            <img [src]="gravatarUrl" style="border-radius: 100px; height: 20px;">
+            <img [src]="account.profile.username | pfpUrl" style="border-radius: 100px; height: 20px;">
             </div>
             <div class="item">
             <mat-icon>assignment_ind</mat-icon>

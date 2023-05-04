@@ -15,10 +15,7 @@ import { AddPostDialogComponent } from '../add-post-dialog/add-post-dialog.compo
 export class NavBarComponent {
   activeAccount = "";
   activeAccountType = "";
-  gravatarUrl= "";
-  gravatarUrlStart = 'https://www.gravatar.com/avatar/';
-  gravatarUrlEnd ='?s=50&d=identicon&r=PG';
-
+ 
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav | undefined;
 
 
@@ -38,7 +35,6 @@ export class NavBarComponent {
         if(response){
          this.activeAccount = response.profile.firstName;
          this.activeAccountType = response.profile.accountType;
-         this.gravatarUrl = this.gravatarUrlStart + response.profile.username + this.gravatarUrlEnd;
         }
       },(error) => {
         console.error("Error subscribing to getLoggedInAccount():", error);

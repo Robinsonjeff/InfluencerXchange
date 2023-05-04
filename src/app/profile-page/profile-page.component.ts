@@ -14,9 +14,7 @@ export class ProfilePageComponent {
 
   loading:boolean = true;
 
-  gravatarUrl= "";
-  gravatarUrlStart = 'https://www.gravatar.com/avatar/';
-  gravatarUrlEnd ='?s=50&d=identicon&r=PG';
+
   account = {
     profile:{
       username:"",
