@@ -22,7 +22,10 @@
         <a mat-list-item *ngIf="!activeAccount" routerLink="/signup" (click)="sidenav.toggle()">Sign up</a>
         <a mat-list-item *ngIf="activeAccountType != 'Influencer' && activeAccount" routerLink="/influencers" (click)="sidenav.toggle()">Influencers</a>
         <a mat-list-item *ngIf="activeAccountType != 'Advertiser' && activeAccount" routerLink="/advertisers" (click)="sidenav.toggle()">Advertisers</a>
+        <a mat-list-item *ngIf="activeAccount" routerLink="/account" (click)="sidenav.toggle()">My Account</a>
       </mat-nav-list>
+
+      
       <div *ngIf="activeAccount" class="account-info">
         <img style="border-radius: 100px;" [src]="gravatarUrl" />
         <h1 style="display: contents;">{{activeAccount}}</h1>
@@ -36,7 +39,7 @@
 
     
   </mat-sidenav>
-  
+
   <mat-sidenav-content>
       <router-outlet></router-outlet>
       <app-footer ></app-footer>

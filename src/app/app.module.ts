@@ -37,6 +37,7 @@ const appRoutes: Routes = [
   { path: 'advertisers', component: AdvertisersComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: RegisterPageComponent },
+  { path: 'account', component: AccountPageComponent },
   { path: '', redirectTo:'/login', pathMatch: 'full'}
 ];
 @NgModule({
