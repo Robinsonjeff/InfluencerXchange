@@ -26,6 +26,10 @@ export class InfluencersComponent {
         });
        
     }
+
+  visitAccount(username:string){
+    this.router.navigate([username]);
+  }
  
   goToSocialSite(link:string){
     window.open(link)

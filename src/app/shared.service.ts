@@ -58,11 +58,14 @@ export class SharedService {
   }
 
   getPosts(accountType?:string,username?:string): Observable<any>{
+    console.log(accountType,username);
     if(username){
-      return this.http.get(`${this.baseUrl}/getPosts?accountType=${accountType}`)
+      return this.http.get(`${this.baseUrl}/getPosts?accountType=${accountType}&username=${username}`)
+
 
     } else {
-      return this.http.get(`${this.baseUrl}/getPosts?accountType=${accountType}&username=${username}`)
+      return this.http.get(`${this.baseUrl}/getPosts?accountType=${accountType}`)
+
     }
   }
   
