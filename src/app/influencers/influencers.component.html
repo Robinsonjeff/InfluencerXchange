@@ -10,27 +10,9 @@
       <mat-icon>attach_money</mat-icon>
       <span>{{post.price | money}}</span>
     </div>
-
-    <div class="personContainer" *ngFor="let post of allPosts">
-      <mat-card style="height:300px; display:flex; flex-flow: row; justify-content: center; align-items: center; text-align: left;">
-        <mat-card-content>
-          <div>
-            <h1 class="blurText" style="text-align: left;">{{post.userId}}</h1> 
-          </div>
-          <p>Title: {{post.title}}</p>
-          <p>{{post.body}}</p>
-          <span>Price: 
-            <p class="blurText">
-              ${{post.price}}
-            </p>
-          </span>
-          <!-- <button class="button" (click)="goToSocialSite(person.socialMediaLink)">Show more</button> -->
-          <button class="button" (click)="goToAccountPage()" >View Account</button>
-
     <div style="display: flex; align-items: center;">
       <mat-icon>schedule</mat-icon>
       <span>{{post.timestamp | date: 'short'}}</span>
-
     </div>
     <p>Posted by {{post.userId}}</p>
     <button (click)="visitAccount(post.userId)" mat-raised-button color="primary">Visit their account.</button>
