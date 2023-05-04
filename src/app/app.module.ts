@@ -31,6 +31,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AddPostDialogComponent } from './add-post-dialog/add-post-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MoneyPipe } from './money.pipe';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 
 const appRoutes: Routes = [
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: RegisterPageComponent },
   { path: 'account', component: AccountPageComponent },
+  { path: ':username',  component: ProfilePageComponent},
   { path: '', redirectTo:'/login', pathMatch: 'full'}
 
 ];
@@ -53,7 +55,8 @@ const appRoutes: Routes = [
     RegisterPageComponent,
     LoginPageComponent,
     AddPostDialogComponent,
-    MoneyPipe
+    MoneyPipe,
+    ProfilePageComponent
 
 
   ],

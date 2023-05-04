@@ -34,6 +34,8 @@
       <span>{{post.timestamp | date: 'short'}}</span>
 
     </div>
+    <p>Posted by {{post.userId}}</p>
+    <button (click)="visitAccount(post.userId)" mat-raised-button color="primary">Visit their account.</button>
   </mat-card-content>
 </mat-card>
 <div style="display: flex; justify-content: center;">

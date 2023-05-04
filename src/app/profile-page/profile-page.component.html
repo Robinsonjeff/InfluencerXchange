@@ -1,6 +1,3 @@
-
-
-
 <mat-card style="width: 40%; margin:auto;">
     <mat-card-header style="margin: auto;">
       <mat-card-title>
@@ -46,8 +43,8 @@
 <div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
   <img *ngIf="loading" src="../../assets/Rolling-1s-200px.gif" style="width: 40px;" alt="loading">
 
-  <h1 *ngIf="!loading && myPosts.length > 0" style="width: 40%; text-align: left; margin-top: 10px;">My Posts</h1>
-  <h1 *ngIf="!loading && myPosts.length == 0" style="width: 40%; text-align: left; margin-top: 10px;">You have no posts yet.</h1>
+  <h1 *ngIf="!loading && myPosts.length > 0" style="width: 40%; text-align: left; margin-top: 10px;">{{username}}'s Posts</h1>
+  <h1 *ngIf="!loading && myPosts.length == 0" style="width: 40%; text-align: left; margin-top: 10px;">They have no posts yet.</h1>
   <mat-card *ngFor="let post of myPosts" style="margin: 10px; width: 40%;">
     <mat-card-header>
       <mat-card-title>
@@ -70,4 +67,3 @@
   </mat-card>
   
 </div>
-

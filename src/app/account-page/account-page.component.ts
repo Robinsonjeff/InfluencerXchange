@@ -40,6 +40,7 @@ export class AccountPageComponent {
    
     if(this.account){
       this.gravatarUrl = this.gravatarUrlStart + this.account.profile.username + this.gravatarUrlEnd;
+      console.log(this.account.profile.username);
       this.service.getPosts(undefined,this.account.profile.username).subscribe((posts)=>{
         this.myPosts = posts.posts 
         this.loading = false;     
