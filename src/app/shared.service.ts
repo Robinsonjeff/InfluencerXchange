@@ -6,19 +6,6 @@ import { Subject, Observable, BehaviorSubject } from 'rxjs';
 })
 export class SharedService {
 
-  post1: any = {
-    userId: 'billybob',
-    title:  'hi',
-    body: 'chicken',
-    price: '33'
-  }
-
-  post2: any = {
-    userId: 'billybob',
-    title:  'h2i',
-    body: 'chidfcken',
-    price: '333'
-  }
 
   allPosts: any = [];
   
@@ -30,6 +17,8 @@ export class SharedService {
   private loggedInAccountSubject = new BehaviorSubject<any>(null);
   
   loggedInAccount$ = this.loggedInAccountSubject.asObservable();
+
+  isLoggedInBool:boolean = false;
 
   
 
@@ -52,7 +41,11 @@ export class SharedService {
   }
 
   setLoggedInAccount(account:any){
+    this.isLoggedInBool = true;
     this.loggedInAccountSubject.next(account);
+  }
+
+  isLoggedIn(){
   }
 
   getLoggedInAccount(): Observable<any>{
@@ -66,8 +59,9 @@ export class SharedService {
     return this.http.post(`${this.baseUrl}/createPost`, post);
   }
 
-  getPosts(): Observable<any>{
-   return this.http.get(`${this.baseUrl}/getPosts`)
+  getPosts(accountType:string): Observable<any>{
+   console.log(accountType)
+   return this.http.get(`${this.baseUrl}/getPosts?accountType=${accountType}`)
   }
   
 
