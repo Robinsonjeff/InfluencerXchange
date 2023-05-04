@@ -27,7 +27,6 @@ export class LoginPageComponent {
         
         this.loadingLogin = false;
 
-        console.log(response)
         
         if(response.profile.accountType === 'Advertiser'){
           this.router.navigate(['/influencers'])

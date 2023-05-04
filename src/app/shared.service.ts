@@ -54,13 +54,10 @@ export class SharedService {
 
 
   createPost(post:any) {
-    console.log("In createPost");
-    console.log(this.http.post(`${this.baseUrl}/createPost`, post));
     return this.http.post(`${this.baseUrl}/createPost`, post);
   }
 
   getPosts(accountType:string): Observable<any>{
-   console.log(accountType)
    return this.http.get(`${this.baseUrl}/getPosts?accountType=${accountType}`)
   }
   

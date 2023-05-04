@@ -25,7 +25,6 @@ export class AccountPageComponent {
     ,private router: Router){
     this.service.getLoggedInAccount().subscribe((account:any)=>{
       this.account  = account;
-      console.log(this.account)
     })
   }
 
