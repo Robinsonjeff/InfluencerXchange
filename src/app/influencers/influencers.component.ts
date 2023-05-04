@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class InfluencersComponent {
 
+
   constructor(private sharedService: SharedService,
     private router: Router) {};
 
@@ -27,8 +28,12 @@ export class InfluencersComponent {
        
     }
  
+
   goToSocialSite(link:string){
-    window.open(link)
+    window.open(link);
+  }
+  goToAccountPage(){
+    this.router.navigate(['/account']);
   }
 
 }
