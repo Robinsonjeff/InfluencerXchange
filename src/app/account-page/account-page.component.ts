@@ -21,16 +21,26 @@ export class AccountPageComponent {
       }
     }
 
+
+    myPosts:any = []
+
+    loading:boolean = true;
+
   constructor(private service: SharedService
     ,private router: Router){
     this.service.getLoggedInAccount().subscribe((account:any)=>{
       this.account  = account;
     })
+ 
   }
 
   ngOnInit(){
+   
     if(this.account){
-
+      this.service.getPosts(undefined,this.account.profile.username).subscribe((posts)=>{
+        this.myPosts = posts.posts 
+        this.loading = false;     
+      })
     } else {
       this.router.navigate(['']);
     }

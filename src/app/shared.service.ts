@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 import { Subject, Observable, BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
@@ -57,8 +57,13 @@ export class SharedService {
     return this.http.post(`${this.baseUrl}/createPost`, post);
   }
 
-  getPosts(accountType:string): Observable<any>{
-   return this.http.get(`${this.baseUrl}/getPosts?accountType=${accountType}`)
+  getPosts(accountType?:string,username?:string): Observable<any>{
+    if(username){
+      return this.http.get(`${this.baseUrl}/getPosts?accountType=${accountType}`)
+
+    } else {
+      return this.http.get(`${this.baseUrl}/getPosts?accountType=${accountType}&username=${username}`)
+    }
   }
   
 
