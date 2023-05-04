@@ -26,11 +26,13 @@ export class LoginPageComponent {
         this.sharedService.setLoggedInAccount(response);
         
         this.loadingLogin = false;
+
         
         if(response.profile.accountType === 'Advertiser'){
-          this.router.navigate(['/advertisers'])
-        } else {
           this.router.navigate(['/influencers'])
+        } else {
+          this.router.navigate(['/advertisers'])
+
         }
 
         this.snackBar.open(
@@ -44,6 +46,8 @@ export class LoginPageComponent {
         );
 
       },(error) => {
+        this.loadingLogin = false;
+
         this.snackBar.open(
           `Error during login: ${error.message}`,
           'Close',

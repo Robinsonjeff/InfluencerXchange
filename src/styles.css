@@ -18,11 +18,20 @@ html,body {
 
 .blurText
 {
-  color: blue;
-  text-shadow: 0 2px 2px rgba(255, 0, 0, 0.4),
-  0 4px 4px rgba(255, 0, 0, 0.3),
-  0 6px 6px rgba(255, 0, 0, 0.2),
-  0 8px 8px rgba(255, 0, 0, 0.1);
+  color: rgb(109, 0, 136);
+    text-shadow: 0 1px 1px rgba(197, 96, 255, 0.4),
+                 0 2px 2px rgba(112, 46, 182, 0.3),
+                 0 3px 3px rgba(104, 17, 181, 0.2),
+                 0 4px 4px rgba(75, 0, 155, 0.1);
 
 }
 
+.navText
+{
+    font-size: 26px;
+    color: rgb(109, 0, 136);
+    text-shadow: 0 1px 1px rgba(197, 96, 255, 0.4),
+                 0 2px 2px rgba(112, 46, 182, 0.3),
+                 0 3px 3px rgba(104, 17, 181, 0.2),
+                 0 4px 4px rgba(75, 0, 155, 0.1);
+}

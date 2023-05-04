@@ -13,18 +13,20 @@
             <label>Password</label>
             <input matInput type="password" p #passwordInput required>
           </mat-form-field>
-          <div style="display: flex; flex-flow: row; justify-content: end; gap: 5px">
-            <div class="button-container">
-                <button mat-raised-button color="secondary" (click)="login(emailInput.value, passwordInput.value)">Login</button>
+          <div style="display: flex; align-items: center; justify-content: flex-end; gap: 5px">
+            <div *ngIf="loadingLogin" style="display: flex; align-items: center;">
+              <img src="../../assets/Rolling-1s-200px.gif" style="height: 36px;">
             </div>
             <div class="button-container">
-                <button mat-raised-button style="color: white;" color="primary" (click)="goToSignUp()">Sign Up</button>
+              <button mat-raised-button color="secondary" (click)="login(emailInput.value, passwordInput.value)">Login</button>
             </div>
-           </div>
+            <div class="button-container">
+              <button mat-raised-button style="color: white;" color="primary" (click)="goToSignUp()">Sign Up</button>
+            </div>
+          </div>
+          
         </form>
-        <div *ngIf="loadingLogin">
-          <img src="../../assets/Rolling-1s-200px.gif">
-        </div>
+        
       </mat-card-content>
     </mat-card>
 </div>

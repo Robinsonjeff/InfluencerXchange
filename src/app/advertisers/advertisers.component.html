@@ -1,10 +1,24 @@
 <div class="container">
-    <p>Active Advertisers</p>
-  
-    <div class="personContainer" *ngFor="let person of advertisers">
-      <p class="blurText">{{person.name}}</p> 
-      <p>Paying: ${{person.postPrice}}</p>
-      <p>Target Audience: {{person.targetAudience}}</p>
-      <button class="button" (click)="goToSocialSite(person.socialMediaLink)">Show more</button>
-    </div>
+  <p>Active Advertisers</p>
+  <div *ngIf="allPosts.length < 1">
+    <img src="../../assets/Rolling-1s-200px.gif">
   </div>
+  <div class="personContainer" *ngFor="let post of allPosts">
+    <mat-card style="height:300px; display:flex; flex-flow: row; justify-content: center; align-items: center; text-align: left;">
+      <mat-card-content>
+        <div>
+          <h1 class="blurText" style="text-align: left;">{{post.userId}}</h1> 
+        </div>
+        <p>Title: {{post.title}}</p>
+        <p>{{post.body}}</p>
+        <span>Price: 
+          <p class="blurText">
+            ${{post.price}}
+          </p>
+        </span>
+        <!-- <button class="button" (click)="goToSocialSite(person.socialMediaLink)">Show more</button> -->
+        <button class="button" >Show more</button>
+    </mat-card-content>
+    </mat-card>
+  </div>
+</div>

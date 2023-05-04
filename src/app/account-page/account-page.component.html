@@ -1,1 +1,43 @@
-<p>account-page works!</p>
+<mat-card style="width: 50%; margin:auto;">
+    <mat-card-header style="margin: auto;">
+      <mat-card-title>
+        <mat-icon>account_circle</mat-icon> Account Information
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content style="margin: auto;">
+    <div style="display: flex; justify-content: center;">
+
+        <div class="item-container">
+            <div class="item">
+            <mat-icon>person</mat-icon>
+            <span>{{account.profile.username}}</span>
+            </div>
+            <div class="item">
+            <mat-icon>assignment_ind</mat-icon>
+            <span>{{account.profile.accountType}}</span>
+            </div>
+            <div class="item">
+            <mat-icon>badge</mat-icon>
+            <span>{{account.profile.firstName}}</span>
+            </div>
+            <div class="item">
+            <mat-icon>badge</mat-icon>
+            <span>{{account.profile.lastName}}</span>
+            </div>
+            <div class="item">
+            <mat-icon>phone</mat-icon>
+            <span>{{account.profile.phoneNumber}}</span>
+            </div>
+            <div class="item">
+            <mat-icon>email</mat-icon>
+            <span>{{account.profile.email}}</span>
+            </div>
+        </div>
+    </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- <button mat-raised-button color="primary">
+        <mat-icon>edit</mat-icon> Edit Profile
+      </button> -->
+    </mat-card-actions>
+</mat-card>

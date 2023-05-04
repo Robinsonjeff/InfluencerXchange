@@ -1,0 +1,19 @@
+.item-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .item mat-icon {
+    margin-right: 0.5rem;
+  }
+
+  .item span {
+    margin-right: 0.5rem;
+  }
