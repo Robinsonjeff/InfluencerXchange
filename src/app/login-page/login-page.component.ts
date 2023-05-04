@@ -47,6 +47,8 @@ export class LoginPageComponent {
         );
 
       },(error) => {
+        this.loadingLogin = false;
+
         this.snackBar.open(
           `Error during login: ${error.message}`,
           'Close',
