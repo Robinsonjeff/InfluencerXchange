@@ -59,6 +59,12 @@ html, body {
     padding-top: 64px;
     height: calc(100vh);
   }
+  .account-info{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
   
   .sidenav {
 
@@ -72,7 +78,7 @@ html, body {
   .mat-drawer-inner-container {
     flex-grow: 1;
     padding-top: 64px;
-    height: fit-content;
+    height: calc(100% - 64px);
     overflow-y: auto;
   }
   

@@ -17,22 +17,26 @@
 
   <mat-sidenav #sidenav mode="over" position="end" style="min-width: 300px;display: flex; flex-flow: column;">
     <div class="mat-drawer-inner-container">
-      <mat-nav-list disableRipple="">
-        <a mat-list-item *ngIf="!activeAccount" routerLink="/login" (click)="sidenav.toggle()">Login</a>
-        <a mat-list-item *ngIf="!activeAccount" routerLink="/signup" (click)="sidenav.toggle()">Sign up</a>
-        <a mat-list-item *ngIf="activeAccountType != 'Influencer' && activeAccount" routerLink="/influencers" (click)="sidenav.toggle()">Influencers</a>
-        <a mat-list-item *ngIf="activeAccountType != 'Advertiser' && activeAccount" routerLink="/advertisers" (click)="sidenav.toggle()">Advertisers</a>
-        <a mat-list-item *ngIf="activeAccount" routerLink="/account" (click)="sidenav.toggle()">My Account</a>
-      </mat-nav-list>
-
+      <div style="display: flex; justify-content: space-between; flex-flow: column; height: 100%;">
+        <mat-nav-list disableRipple="">
+          <a mat-list-item *ngIf="!activeAccount" routerLink="/login" (click)="sidenav.toggle()">Login</a>
+          <a mat-list-item *ngIf="!activeAccount" routerLink="/signup" (click)="sidenav.toggle()">Sign up</a>
+          <a mat-list-item *ngIf="activeAccountType != 'Influencer' && activeAccount" routerLink="/influencers" (click)="sidenav.toggle()">Influencers</a>
+          <a mat-list-item *ngIf="activeAccountType != 'Advertiser' && activeAccount" routerLink="/advertisers" (click)="sidenav.toggle()">Advertisers</a>
+          <a mat-list-item *ngIf="activeAccount" routerLink="/account" (click)="sidenav.toggle()">My Account</a>
+        </mat-nav-list>
+        <div>
+          <div *ngIf="activeAccount" class="account-info">
+            <img style="border-radius: 100px; height: 50px;" [src]="gravatarUrl" />
+            <h1 style="text-align: center;">{{activeAccount}}</h1>
+            <p style="text-align: center;">Account type: {{activeAccountType}}</p>
+          </div>      
+          <div class="logout-button-container">
+            <button *ngIf="activeAccount" mat-raised-button style="background-color: red; color: white; text-align: center; margin: 5px;" (click)="logout()">Logout</button>
+          </div>
+         
+        </div>
       
-      <div *ngIf="activeAccount" class="account-info">
-        <img style="border-radius: 100px;" [src]="gravatarUrl" />
-        <h1 style="display: contents;">{{activeAccount}}</h1>
-        <p>Account type: {{activeAccountType}}</p>
-      </div>
-      <div class="logout-button-container">
-        <button *ngIf="activeAccount" mat-raised-button style="background-color: red; color: white; text-align: center; margin: 5px;" (click)="logout()">Logout</button>
       </div>
     </div>
 

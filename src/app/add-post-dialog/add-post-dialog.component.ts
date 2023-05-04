@@ -16,6 +16,7 @@ export class AddPostDialogComponent {
 
   username:string = '';
   accountType = '';
+  loading: boolean = false;
 
   constructor( private dialog: MatDialog, private service:SharedService, private sb: MatSnackBar) {
   
@@ -37,11 +38,14 @@ export class AddPostDialogComponent {
         accountType = account.profile.accountType;
       });
 
-
+      this.loading = true;
       this.service.createPost({userId,title,body,price,accountType}).subscribe((response:any) => 
       {
         if(response.success == true)
         {
+          this.loading = false;
+          this.dialog.closeAll();
+
           this.sb.open(
             "Post succefully made",
             "Close",
@@ -54,6 +58,7 @@ export class AddPostDialogComponent {
         } 
         else 
         {
+          this.dialog.closeAll();
           this.sb.open(
             "Unsuccessful post, try again",
             "Close",
@@ -67,7 +72,6 @@ export class AddPostDialogComponent {
   
       })
 
-      this.dialog.closeAll();
 
     }
 
