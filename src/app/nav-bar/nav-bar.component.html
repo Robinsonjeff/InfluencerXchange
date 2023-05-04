@@ -27,7 +27,7 @@
         </mat-nav-list>
         <div>
           <div *ngIf="activeAccount" class="account-info">
-            <img style="border-radius: 100px; height: 50px;" [src]="gravatarUrl" />
+            <img style="border-radius: 100px; height: 50px;" [src]="activeAccount | pfpUrl" />
             <h1 style="text-align: center;">{{activeAccount}}</h1>
             <p style="text-align: center;">Account type: {{activeAccountType}}</p>
           </div>      

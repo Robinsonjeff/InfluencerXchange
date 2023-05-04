@@ -1,7 +1,7 @@
 
 
 
-<mat-card style="width: 40%; margin:auto;">
+<mat-card class="container">
     <mat-card-header style="margin: auto;">
       <mat-card-title>
         <mat-icon>account_circle</mat-icon> Account Information
@@ -14,7 +14,7 @@
             <div class="item">
             <mat-icon>person</mat-icon>
             <span>{{account.profile.username}}</span>
-            <img [src]="gravatarUrl" style="border-radius: 100px; height: 20px;">
+            <img [src]="account.profile.username | pfpUrl" style="border-radius: 100px; height: 20px;">
             </div>
             <div class="item">
             <mat-icon>assignment_ind</mat-icon>
@@ -43,12 +43,12 @@
  
     </mat-card-actions>
 </mat-card>
-<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
+<div class="container">
   <img *ngIf="loading" src="../../assets/Rolling-1s-200px.gif" style="width: 40px;" alt="loading">
 
   <h1 *ngIf="!loading && myPosts.length > 0" style="width: 40%; text-align: left; margin-top: 10px;">My Posts</h1>
   <h1 *ngIf="!loading && myPosts.length == 0" style="width: 40%; text-align: left; margin-top: 10px;">You have no posts yet.</h1>
-  <mat-card *ngFor="let post of myPosts" style="margin: 10px; width: 40%;">
+  <mat-card *ngFor="let post of myPosts" style="margin: 10px 0 10px 0;">
     <mat-card-header>
       <mat-card-title>
         <h2>{{post.title | uppercase}}</h2>

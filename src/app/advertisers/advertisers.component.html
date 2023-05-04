@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">Active Advertisers</h1>
+<h1 style="text-align: left;">Active Advertisers</h1>
 
 <mat-card *ngFor="let post of allPosts" style="width: 40%; margin: 10px; display: flex; flex-flow: column; justify-content: center; align-items: center; margin-left: auto; margin-right: auto; text-align: left;">
   <div style="margin: auto;">
@@ -17,8 +17,9 @@
         <mat-icon>schedule</mat-icon>
         <span>{{post.timestamp | date: 'short'}}</span>
       </div>
-      <div>
-        <p>Posted by {{post.userID}}</p>
+      <div class="item">
+        <span>Posted by {{post.userIds}}</span>
+        <img [src]="post.userId | pfpUrl" alt="pfp" style="width: 20px; border-radius: 100px;">
       </div>
     </mat-card-content>
 

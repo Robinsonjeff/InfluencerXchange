@@ -32,6 +32,7 @@ import { AddPostDialogComponent } from './add-post-dialog/add-post-dialog.compon
 import { MatDialogModule } from '@angular/material/dialog';
 import { MoneyPipe } from './money.pipe';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { PfpUrlPipe } from './pfp-url.pipe';
 
 
 const appRoutes: Routes = [
@@ -56,7 +57,8 @@ const appRoutes: Routes = [
     LoginPageComponent,
     AddPostDialogComponent,
     MoneyPipe,
-    ProfilePageComponent
+    ProfilePageComponent,
+    PfpUrlPipe
 
 
   ],

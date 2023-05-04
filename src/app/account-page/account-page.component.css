@@ -17,3 +17,15 @@
   .item span {
     margin-right: 0.5rem;
   }
+
+  .container {
+    width: 40%; 
+    
+    min-width: 315px;
+    margin: auto; margin-top: 10px; margin-bottom: 10px;
+}
+@media screen and (max-width:700px) {
+    .container {
+        width: 70%;
+    }
+}

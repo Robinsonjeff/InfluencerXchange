@@ -8,9 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./account-page.component.css']
 })
 export class AccountPageComponent {
-    gravatarUrl= "";
-    gravatarUrlStart = 'https://www.gravatar.com/avatar/';
-    gravatarUrlEnd ='?s=50&d=identicon&r=PG';
+ 
     account = {
       profile:{
         username:"",
@@ -39,7 +37,6 @@ export class AccountPageComponent {
   ngOnInit(){
    
     if(this.account){
-      this.gravatarUrl = this.gravatarUrlStart + this.account.profile.username + this.gravatarUrlEnd;
       console.log(this.account.profile.username);
       this.service.getPosts(undefined,this.account.profile.username).subscribe((posts)=>{
         this.myPosts = posts.posts 
