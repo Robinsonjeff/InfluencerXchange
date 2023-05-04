@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(private sharedService: SharedService) {
  
   }
-  //get from mongoDB
+
  
   checkValidLogin()
   {

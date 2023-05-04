@@ -30,6 +30,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AddPostDialogComponent } from './add-post-dialog/add-post-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MoneyPipe } from './money.pipe';
 
 
 const appRoutes: Routes = [
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
     AccountPageComponent,
     RegisterPageComponent,
     LoginPageComponent,
-    AddPostDialogComponent
+    AddPostDialogComponent,
+    MoneyPipe
 
 
   ],
