@@ -6,17 +6,15 @@
             <mat-form-field appearance="outline">
                 <mat-label>Title</mat-label>
                 <input matInput #title id="title">
-              </mat-form-field>
-              <mat-form-field appearance="outline">
-                <mat-label>Price</mat-label>
-                <input matInput #price id="price" type="number">
-              </mat-form-field>
-              <mat-form-field appearance="outline" class="mat-textarea">
-                <mat-label>Body</mat-label>
-                <textarea matInput #body id="body" placeholder="Im looking for..." cdkTextareaAutosize cdkAutosizeMinRows="5" cdkAutosizeMaxRows="10"></textarea>
-              </mat-form-field>
-              
-              
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Price</mat-label>
+              <input matInput #price id="price" type="number">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="mat-textarea">
+              <mat-label>Body</mat-label>
+              <textarea matInput #body id="body" placeholder="Im looking for..." cdkTextareaAutosize cdkAutosizeMinRows="5" cdkAutosizeMaxRows="10"></textarea>
+            </mat-form-field>
         </div>
 
         <div style="height: 27px; margin:0; padding: 0;" *ngIf="!loading"></div>
