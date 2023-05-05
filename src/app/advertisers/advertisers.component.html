@@ -18,12 +18,15 @@
         <span>{{post.timestamp | date: 'short'}}</span>
       </div>
       <div class="item">
-        <span>Posted by {{post.userIds}}</span>
+        <span>Posted by {{post.userId}}</span>
         <img [src]="post.userId | pfpUrl" alt="pfp" style="width: 20px; border-radius: 100px;">
       </div>
     </mat-card-content>
 
   </div>
+  <mat-card-actions>
+    <button (click)="visitAccount(post.userId)" mat-raised-button color="primary">Visit account</button>
+  </mat-card-actions>
 
 </mat-card>
 <div style="display: flex; justify-content: center;">

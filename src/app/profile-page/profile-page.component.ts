@@ -37,7 +37,10 @@ export class ProfilePageComponent {
       this.username = params.get('username')!;
       // Fetch and display the user's profile information using this.username
     });
+    this.service.getUser(this.username).subscribe((account:any)=>{
+      this.account.profile = account
 
+    })
     this.service.getPosts(undefined,this.username).subscribe((posts)=> {
       this.loading = false;
       this.myPosts = posts.posts;

@@ -1,11 +1,14 @@
-<mat-card style="width: 40%; margin:auto;">
-    <mat-card-header style="margin: auto;">
+
+
+
+<mat-card style="width: 40%; margin:auto;" *ngIf="!loading">
+    <mat-card-header style="margin: auto; width: 100%;;">
       <mat-card-title>
         <mat-icon>account_circle</mat-icon> Account Information
       </mat-card-title>
     </mat-card-header>
-    <mat-card-content style="margin: auto;">
-    <div style="display: flex; justify-content: center;">
+    <mat-card-content style="width: 100%;">
+    <div style="display: flex; justify-content: center; text-align: left; width: 100%;" *ngIf="!loading">
 
         <div class="item-container">
             <div class="item">

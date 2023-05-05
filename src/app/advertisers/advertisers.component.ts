@@ -25,6 +25,10 @@ export class AdvertisersComponent {
       });
      
   }
+  visitAccount(username:string){
+    this.router.navigate([username]);
+  }
+ 
 // influencers = [
 //   {
 //     name:"Crob",
