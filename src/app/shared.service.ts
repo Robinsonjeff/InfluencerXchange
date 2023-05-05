@@ -37,6 +37,11 @@ export class SharedService {
     
   }
 
+  getUser(username:string){
+    return this.http.get(`${this.baseUrl}/getUser?username=${username}`);
+
+  }
+
   login(credentials: { username: string; password: string }): Observable<any> {
     return this.http.post(`${this.baseUrl}/login`, credentials);
   }

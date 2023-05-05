@@ -19,9 +19,10 @@
       <img [src]="post.userId | pfpUrl" alt="pfp" style="border-radius: 100px; height: 20px;">
     </div>
 
-    <button (click)="visitAccount(post.userId)" mat-raised-button color="primary">Visit their account.</button>
+    <button (click)="visitAccount(post.userId)" mat-raised-button color="primary">Visit account</button>
   </mat-card-content>
 </mat-card>
 <div style="display: flex; justify-content: center;">
-  <img src="../../assets/Rolling-1s-200px.gif" *ngIf="allPosts.length < 1" style="margin: auto; height: 50px;">
+  <img src="../../assets/Rolling-1s-200px.gif" *ngIf="allPosts.length < 1 && loading" style="margin: auto; height: 50px;">
+  <h1 *ngIf="allPosts.length < 1 && !loading">No posts available.</h1>
 </div>

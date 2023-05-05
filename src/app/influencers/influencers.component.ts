@@ -15,6 +15,8 @@ export class InfluencersComponent {
 
     allPosts: any = []
 
+    loading: boolean = true;
+
     ngOnInit(){
       if(this.sharedService.isLoggedInBool == false){
         this.router.navigate(['']);
@@ -22,6 +24,7 @@ export class InfluencersComponent {
       //getting posts for Advertisers to see
       this.sharedService.getPosts('Advertiser').subscribe((data) => {
           this.allPosts = data.posts;
+          this.loading = false;
         }, (error) => {
           console.log(error);
         });
