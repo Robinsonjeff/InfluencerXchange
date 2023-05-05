@@ -32,6 +32,20 @@ export class AddPostDialogComponent {
       let userId = "";
       let accountType = "";
 
+      if(!title || !body || !price){
+        this.loading = false;
+        this.sb.open(
+          "Invalid post, try again.",
+          "Close",
+          {
+            duration: 5000,
+            horizontalPosition: 'center',
+            verticalPosition: 'top',
+          }
+        )
+        return;
+      }
+
       this.service.getLoggedInAccount().subscribe((account) =>
       {
         userId = account.profile.username;
@@ -58,6 +72,7 @@ export class AddPostDialogComponent {
         } 
         else 
         {
+          this.loading = false;
           this.dialog.closeAll();
           this.sb.open(
             "Unsuccessful post, try again",
